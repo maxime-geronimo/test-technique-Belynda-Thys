@@ -1,0 +1,18 @@
+.manage__add {
+  position: absolute;
+  bottom: 45px;
+  right: 45px;
+  width: 90px;
+  height: 90px;
+  object-fit: contain; }
+
+.manage__edit {
+  height: fit-content;
+  width: fit-content;
+  margin: 5% auto; }
+
+.manage__editPicture {
+  width: 150px;
+  height: 150px; }
+
+/*# sourceMappingURL=manage.css.map */

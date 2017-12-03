@@ -55,7 +55,8 @@ html,
 body {
   margin: 0;
   padding: 0;
-  font-family: "roboto", sans-serif; }
+  font-family: "roboto", sans-serif;
+  background-color: #f4f7fa; }
 
 * {
   box-sizing: border-box; }
@@ -90,5 +91,115 @@ body {
   top: 5px;
   max-height: 80px;
   object-fit: contain; }
+
+.manage__add {
+  position: absolute;
+  bottom: 45px;
+  right: 45px;
+  width: 90px;
+  height: 90px;
+  object-fit: contain; }
+
+.manage__edit {
+  height: fit-content;
+  width: fit-content;
+  margin: 5% auto; }
+
+.manage__editPicture {
+  width: 150px;
+  height: 150px; }
+
+.overlay {
+  background: rgba(159, 160, 162, 0.8);
+  filter: alpha(opacity=80);
+  position: fixed;
+  top: 0px;
+  bottom: 0px;
+  left: 0px;
+  right: 0px;
+  z-index: 100; }
+
+.popup {
+  position: absolute;
+  z-index: 200;
+  top: 25%;
+  left: 0;
+  right: 0;
+  margin: auto;
+  width: fit-content; }
+
+.popup__rectangle {
+  width: 700px;
+  height: 300px;
+  border-radius: 8px;
+  background-color: #f4f7fa; }
+
+.popup__rectanglePicture {
+  height: 100%;
+  padding: 15px; }
+
+.popup__closeButton {
+  position: absolute;
+  top: -35px;
+  right: -35px;
+  width: 71px;
+  height: 71px;
+  object-fit: contain; }
+
+.popup__actions {
+  float: right; }
+
+.popup__actionEdit, .popup__actionDelete {
+  width: 163px;
+  height: 50px;
+  border-radius: 4px;
+  border: none;
+  margin: 10px 0 0 10px; }
+
+.popup__actionEdit {
+  background-color: #00a4a7; }
+
+.popup__actionDelete {
+  background-color: #fe206b; }
+
+.popup__buttonSpan {
+  font-size: 16px;
+  color: #ffffff; }
+
+.editForm {
+  display: inline-block;
+  vertical-align: top;
+  width: 50%;
+  padding-left: 15px; }
+
+.editForm__labelTitle {
+  font-size: 24px;
+  position: relative;
+  top: 25px;
+  left: 0;
+  color: #8094a1; }
+
+.editForm__inputTitle {
+  border-bottom: 1px solid #ccd2db;
+  background: none;
+  border-top: none;
+  border-left: none;
+  border-right: none;
+  font-size: 24px;
+  color: #8094a1;
+  margin-bottom: 20px;
+  padding-bottom: 5px;
+  width: 320px; }
+
+.editForm__labelDescribe {
+  color: #8094a1; }
+
+.editForm__inputDescribe {
+  width: 320px;
+  height: 150px;
+  border-radius: 8px;
+  background-color: #ffffff;
+  border: solid 1px #ccd2db;
+  margin: 10px 5px 10px 5px; }
 
 /*# sourceMappingURL=style.css.map */

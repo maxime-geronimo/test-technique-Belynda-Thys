@@ -1,0 +1,23 @@
+.manage__add{
+  position: absolute;
+  bottom: 45px;
+  right: 45px;
+  width: 90px;
+  height: 90px;
+  object-fit: contain;
+}
+
+.manage__edit{
+  height: fit-content;
+  width: fit-content;
+  margin: 5% auto;
+}
+
+.manage__editPicture{
+  width: 150px;
+  height: 150px;
+  //object-fit: contain;
+  //border-radius: 20px;
+  //box-shadow: 0 0 5px 0 rgba(127, 143, 164, 0.6);
+  //border: solid 3px #ffffff;
+}
