@@ -1,0 +1,16 @@
+@font-face {
+  font-family: 'roboto';
+  src: url("../fonts/Roboto-Regular.ttf");
+  src: url("../fonts/Roboto-Regular.ttf?#iefix") format("embedded-opentype"), url("../fonts/Roboto-Regular.ttf") format("woff"), url("../fonts/Roboto-Regular.ttf") format("truetype");
+  font-weight: 200;
+  font-style: normal; }
+html,
+body {
+  margin: 0;
+  padding: 0;
+  font-family: "roboto", sans-serif; }
+
+* {
+  box-sizing: border-box; }
+
+/*# sourceMappingURL=global.css.map */

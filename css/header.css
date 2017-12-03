@@ -6,14 +6,15 @@
 
 .header__title {
   position: relative;
-  top: 30%;
+  top: 35%;
   margin: auto auto;
   width: 247px;
   max-width: 95%;
-  font-size: 24px;
+  font-size: 22px;
   font-weight: bold;
   text-align: center;
-  color: #ffffff; }
+  color: #ffffff;
+  text-transform: uppercase; }
 
 .header__profilePicture {
   position: absolute;

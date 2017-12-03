@@ -45,6 +45,27 @@ table {
   border-collapse: collapse;
   border-spacing: 0; }
 
+@font-face {
+  font-family: 'roboto';
+  src: url("../fonts/Roboto-Regular.ttf");
+  src: url("../fonts/Roboto-Regular.ttf?#iefix") format("embedded-opentype"), url("../fonts/Roboto-Regular.ttf") format("woff"), url("../fonts/Roboto-Regular.ttf") format("truetype");
+  font-weight: 200;
+  font-style: normal; }
+html,
+body {
+  margin: 0;
+  padding: 0;
+  font-family: "roboto", sans-serif; }
+
+* {
+  box-sizing: border-box; }
+
+@font-face {
+  font-family: 'roboto';
+  src: url("../fonts/Roboto-Regular.ttf");
+  src: url("../fonts/Roboto-Regular.ttf?#iefix") format("embedded-opentype"), url("../fonts/Roboto-Regular.ttf") format("woff"), url("../fonts/Roboto-Regular.ttf") format("truetype");
+  font-weight: 200;
+  font-style: normal; }
 .header {
   width: 100%;
   height: 80px;
@@ -53,14 +74,15 @@ table {
 
 .header__title {
   position: relative;
-  top: 30%;
+  top: 35%;
   margin: auto auto;
   width: 247px;
   max-width: 95%;
-  font-size: 24px;
+  font-size: 22px;
   font-weight: bold;
   text-align: center;
-  color: #ffffff; }
+  color: #ffffff;
+  text-transform: uppercase; }
 
 .header__profilePicture {
   position: absolute;
