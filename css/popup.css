@@ -5,7 +5,8 @@
   left: 0;
   right: 0;
   margin: auto;
-  width: fit-content; }
+  width: fit-content;
+  display: none; }
 
 .popup__rectangle {
   width: 700px;

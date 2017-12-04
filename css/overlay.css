@@ -6,6 +6,7 @@
   bottom: 0px;
   left: 0px;
   right: 0px;
-  z-index: 100; }
+  z-index: 100;
+  display: none; }
 
 /*# sourceMappingURL=overlay.css.map */

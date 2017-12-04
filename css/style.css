@@ -117,7 +117,8 @@ body {
   bottom: 0px;
   left: 0px;
   right: 0px;
-  z-index: 100; }
+  z-index: 100;
+  display: none; }
 
 .popup {
   position: absolute;
@@ -126,7 +127,8 @@ body {
   left: 0;
   right: 0;
   margin: auto;
-  width: fit-content; }
+  width: fit-content;
+  display: none; }
 
 .popup__rectangle {
   width: 700px;
