@@ -8,11 +8,40 @@
 
 .manage__edit {
   height: fit-content;
-  width: fit-content;
+  width: 85%;
   margin: 5% auto; }
 
 .manage__editPicture {
   width: 150px;
-  height: 150px; }
+  height: 150px;
+  opacity: 1;
+  display: block;
+  transition: .5s ease;
+  backface-visibility: hidden;
+  object-fit: cover;
+  border-radius: 20px;
+  box-shadow: 0 0 5px 0 rgba(127, 143, 164, 0.6);
+  border: solid 3px #ffffff; }
+
+.container {
+  display: inline-block;
+  position: relative; }
+
+.container:hover .manage__editPicture {
+  opacity: 0.3; }
+
+.manage__editLink {
+  transition: .5s ease;
+  opacity: 0;
+  position: absolute;
+  top: 90%;
+  left: 20%;
+  transform: translate(0%, -80%);
+  -ms-transform: translate(0%, -80%);
+  text-decoration: underline;
+  cursor: pointer; }
+
+.container:hover .manage__editLink {
+  opacity: 1; }
 
 /*# sourceMappingURL=manage.css.map */

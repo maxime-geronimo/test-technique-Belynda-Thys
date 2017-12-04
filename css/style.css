@@ -87,10 +87,14 @@ body {
 
 .header__profilePicture {
   position: absolute;
-  right: 17px;
-  top: 5px;
-  max-height: 80px;
-  object-fit: contain; }
+  right: 20px;
+  top: 15px;
+  width: 50px;
+  height: 50px;
+  box-shadow: 0 10px 20px 0 #7f8fa4;
+  border: solid 3px #ffffff;
+  border-radius: 30px;
+  object-fit: cover; }
 
 .manage__add {
   position: absolute;
@@ -102,12 +106,41 @@ body {
 
 .manage__edit {
   height: fit-content;
-  width: fit-content;
+  width: 85%;
   margin: 5% auto; }
 
 .manage__editPicture {
   width: 150px;
-  height: 150px; }
+  height: 150px;
+  opacity: 1;
+  display: block;
+  transition: .5s ease;
+  backface-visibility: hidden;
+  object-fit: cover;
+  border-radius: 20px;
+  box-shadow: 0 0 5px 0 rgba(127, 143, 164, 0.6);
+  border: solid 3px #ffffff; }
+
+.container {
+  display: inline-block;
+  position: relative; }
+
+.container:hover .manage__editPicture {
+  opacity: 0.3; }
+
+.manage__editLink {
+  transition: .5s ease;
+  opacity: 0;
+  position: absolute;
+  top: 90%;
+  left: 20%;
+  transform: translate(0%, -80%);
+  -ms-transform: translate(0%, -80%);
+  text-decoration: underline;
+  cursor: pointer; }
+
+.container:hover .manage__editLink {
+  opacity: 1; }
 
 .overlay {
   background: rgba(159, 160, 162, 0.8);
@@ -203,5 +236,15 @@ body {
   background-color: #ffffff;
   border: solid 1px #ccd2db;
   margin: 10px 5px 10px 5px; }
+
+.uploadPopup {
+  position: absolute;
+  z-index: 200;
+  top: 25%;
+  left: 0;
+  right: 0;
+  margin: auto;
+  width: fit-content;
+  display: none; }
 
 /*# sourceMappingURL=style.css.map */

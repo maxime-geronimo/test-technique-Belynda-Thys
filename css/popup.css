@@ -82,4 +82,14 @@
   border: solid 1px #ccd2db;
   margin: 10px 5px 10px 5px; }
 
+.uploadPopup {
+  position: absolute;
+  z-index: 200;
+  top: 25%;
+  left: 0;
+  right: 0;
+  margin: auto;
+  width: fit-content;
+  display: none; }
+
 /*# sourceMappingURL=popup.css.map */

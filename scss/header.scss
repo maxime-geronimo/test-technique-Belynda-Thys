@@ -20,8 +20,12 @@
 
 .header__profilePicture{
   position: absolute;
-  right: 17px;
-  top: 5px;
-  max-height: 80px;
-  object-fit: contain;
+  right: 20px;
+  top: 15px;
+  width: 50px;
+  height: 50px;
+  box-shadow: 0 10px 20px 0 #7f8fa4;
+  border: solid 3px #ffffff;
+  border-radius: 30px;
+  object-fit: cover;
 }
