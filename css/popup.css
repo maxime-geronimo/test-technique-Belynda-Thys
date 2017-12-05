@@ -67,8 +67,8 @@
   border-right: none;
   font-size: 24px;
   color: #8094a1;
-  margin-bottom: 20px;
-  padding-bottom: 5px;
+  margin: 20px 0 20px 0;
+  padding: 5px 0 5px 0;
   width: 320px; }
 
 .editForm__labelDescribe {
@@ -84,12 +84,15 @@
 
 .uploadPopup {
   position: absolute;
-  z-index: 200;
   top: 25%;
   left: 0;
   right: 0;
+  z-index: 200;
   margin: auto;
   width: fit-content;
   display: none; }
+
+.deleteForm {
+  display: inline-block; }
 
 /*# sourceMappingURL=popup.css.map */

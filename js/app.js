@@ -5,10 +5,10 @@ $(document).ready(function() {
         $(".uploadPopup").hide();
     });
 
-    $(".manage__editPicture").click(function () {
+    /*$(".manage__editPicture").click(function () {
         $(".popup").show();
         $('.overlay').show();
-    });
+    });*/
 
     $(".manage__add").click(function () {
         $(".uploadPopup").show();

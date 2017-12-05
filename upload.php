@@ -1,14 +1,18 @@
 <?php
-if(isset($_FILES['image']) && (!empty($_FILES['image']))) {
+include ('config/config.php');
 
-    $dossier = 'assets/uploads/';
-    $image = basename($_FILES['image']['name']);
+$imageToUpload = $_FILES['image'];
+
+if(isset($imageToUpload) && (!empty($imageToUpload))) {
+
+    $uploads_dir = 'assets/uploads/';
+    $image_name = basename($imageToUpload['name']);
 
     $taille_maxi = 100000;
-    $taille = filesize($_FILES['image']['tmp_name']);
+    $taille = filesize($imageToUpload['tmp_name']);
 
     $extensions = array('.png', '.jpg', '.jpeg');
-    $extension = strrchr($_FILES['image']['name'], '.');
+    $extension = strrchr($imageToUpload['name'], '.');
 
 
     if(!in_array($extension, $extensions)) //Si l'extension n'est pas dans le tableau
@@ -23,24 +27,42 @@ if(isset($_FILES['image']) && (!empty($_FILES['image']))) {
 
     if(!isset($erreur)) //S'il n'y a pas d'erreur, on upload
     {
-        $image = strtr($image,
+        $image_name = strtr($image_name,
             'ÀÁÂÃÄÅÇÈÉÊËÌÍÎÏÒÓÔÕÖÙÚÛÜÝàáâãäåçèéêëìíîïðòóôõöùúûüýÿ',
             'AAAAAACEEEEIIIIOOOOOUUUUYaaaaaaceeeeiiiioooooouuuuyy');
-        $image = preg_replace('/([^.a-z0-9]+)/i', '-', $image);
+        $image_name = preg_replace('/([^.a-z0-9]+)/i', '-', $image_name);
 
 
-        if(move_uploaded_file($_FILES['image']['tmp_name'], $dossier . $image))
+        if(move_uploaded_file($imageToUpload['tmp_name'], $uploads_dir . $image_name))
         {
-            echo 'Upload effectué avec succès !';
-
             $sql = 'INSERT INTO images(image_name) VALUES (:image_name)';
 
             $req = $bdd->prepare($sql);
             $req->execute(
                 array(
-                    'image_name' => $image,
+                    'image_name' => $image_name
                 )
             );
+
+
+            if ($req){
+
+                //echo ($image_name);
+
+                $sqlCreate = "SELECT image_id FROM images WHERE image_name = '". $image_name. "' ORDER BY image_id DESC LIMIT 1";
+
+                $reqCreate = $bdd->prepare($sqlCreate);
+                $reqCreate->execute();
+
+                $imageCreated = $reqCreate->fetch();
+                //var_dump($imageCreated);
+
+                header("Location: index.php?id=" . $imageCreated['image_id']);
+
+            } else {
+
+                echo "pb";
+            }
 
         } else {
 
@@ -50,7 +72,7 @@ if(isset($_FILES['image']) && (!empty($_FILES['image']))) {
 
     } else {
 
-        echo "test";
+        echo $erreur;
     }
 
 }
