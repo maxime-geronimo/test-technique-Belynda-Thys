@@ -17,7 +17,7 @@ if(isset($imageToUpload) && (!empty($imageToUpload))) {
 
     if(!in_array($extension, $extensions)) //Si l'extension n'est pas dans le tableau
     {
-        $erreur = 'Vous devez uploader un fichier de type png, jpg, jpeg, txt ou doc...';
+        $erreur = 'Vous devez uploader un fichier de type png, jpg, jpeg...';
     }
 
     if($taille>$taille_maxi)

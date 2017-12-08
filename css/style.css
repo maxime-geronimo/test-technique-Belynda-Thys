@@ -96,7 +96,8 @@ button, input, textarea {
   box-shadow: 0 10px 20px 0 #7f8fa4;
   border: solid 3px #ffffff;
   border-radius: 30px;
-  object-fit: cover; }
+  object-fit: cover;
+  background-color: #d8d8d8; }
 
 .manage__add {
   position: absolute;
@@ -128,15 +129,7 @@ button, input, textarea {
   top: 40%;
   left: 33%; }
 
-.upload input[type='file'] {
-  position: absolute;
-  margin-top: 3px;
-  margin-left: 3px;
-  height: 1px;
-  width: 1px;
-  z-index: -5; }
-
-.container {
+.manage__editContainer {
   display: inline-block;
   position: relative;
   margin: 10px;
@@ -152,38 +145,26 @@ button, input, textarea {
   background-repeat: no-repeat;
   background-size: cover; }
 
-.container-hover {
-  transition: .5s ease;
+.manage__editContainer-hover {
   width: 100%;
   height: 100%;
   border-radius: 20px;
   opacity: 0;
+  transition: .5s ease;
   background-image: linear-gradient(to bottom, transparent, black); }
 
-.container-placeholder {
-  display: inline-block;
-  position: relative;
-  margin: 10px;
-  border-radius: 20px;
-  background-color: #D8D8D8;
-  width: 125px;
-  height: 125px;
-  opacity: 1;
-  transition: .5s ease;
-  backface-visibility: hidden;
-  object-fit: cover;
-  box-shadow: 0 0 5px 0 rgba(127, 143, 164, 0.6);
-  border: solid 3px #ffffff; }
+.manage__editContainer-placeholder {
+  background-color: #D8D8D8; }
 
 .manage__editLink {
   text-decoration: none; }
 
 .manage__editDefault {
-  transition: .5s ease;
-  opacity: 0;
   position: absolute;
   top: 90%;
   left: 15%;
+  transition: .5s ease;
+  opacity: 0;
   transform: translate(0%, -80%);
   -ms-transform: translate(0%, -80%);
   text-decoration: underline;
@@ -192,11 +173,18 @@ button, input, textarea {
   border: none;
   color: white; }
 
-.container:hover .manage__editDefault {
+.manage__editContainer:hover .manage__editDefault {
   opacity: 1; }
 
-.container:hover .container-hover {
+.manage__editContainer:hover .manage__editContainer-hover {
   opacity: 1; }
+
+.uploadForm {
+  position: relative;
+  z-index: -5; }
+
+.deleteForm {
+  display: inline-block; }
 
 .overlay {
   background: rgba(159, 160, 162, 0.8);
@@ -232,7 +220,7 @@ button, input, textarea {
       width: 400px;
       height: 550px; } }
 
-.popup__rectanglePicture {
+.rectanglePicture {
   height: 230px;
   margin: 30px;
   object-fit: contain;
@@ -240,7 +228,7 @@ button, input, textarea {
   box-shadow: 0 0 5px 0 rgba(127, 143, 164, 0.6);
   border: solid 3px #ffffff; }
   @media screen and (max-width: 800px) {
-    .popup__rectanglePicture {
+    .rectanglePicture {
       margin: 30px 80px 30px 80px; } }
 
 .popup__closeButton {
@@ -254,28 +242,28 @@ button, input, textarea {
 .popup__actions {
   float: right; }
 
-.popup__actionEdit, .popup__actionDelete {
+.action {
   width: 163px;
   height: 50px;
   border-radius: 4px;
   border: none;
   margin: 10px 0 0 10px; }
-  .popup__actionEdit:hover, .popup__actionDelete:hover {
+  .action:hover {
     transition: .2s ease;
     box-shadow: 0px 2px 3px grey; }
 
-.popup__actionEdit {
+.actionEdit {
   background-color: #00a4a7; }
 
-.popup__actionDelete {
+.actionDelete {
   background-color: #fe206b; }
 
-.popup__buttonSpan {
+.actionSpan {
   font-size: 16px;
   color: #ffffff;
   vertical-align: middle; }
 
-.popup__actionsPic {
+.actionPic {
   width: 20px;
   vertical-align: middle;
   height: 20px;
@@ -324,21 +312,5 @@ button, input, textarea {
   margin: 10px 5px 10px 5px;
   font-size: 22px;
   color: #8094a1; }
-
-.uploadPopup {
-  position: absolute;
-  top: 25%;
-  left: 0;
-  right: 0;
-  z-index: 200;
-  margin: auto;
-  width: fit-content;
-  display: none; }
-
-.deleteForm {
-  display: inline-block; }
-
-.uploadForm {
-  visibility: hidden; }
 
 /*# sourceMappingURL=style.css.map */

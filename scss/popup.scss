@@ -6,7 +6,6 @@
   right: 0;
   margin: auto;
   width: fit-content;
-  //height: fit-content;
   display: none;
 
   @media screen and (max-width: 800px ){
@@ -26,7 +25,7 @@
   }
 }
 
-.popup__rectanglePicture{
+.rectanglePicture{
   height: 230px;
   margin: 30px;
   object-fit: contain;
@@ -52,7 +51,7 @@
   float: right;
 }
 
-.popup__actionEdit, .popup__actionDelete{
+.action{
   width: 163px;
   height: 50px;
   border-radius: 4px;
@@ -65,21 +64,21 @@
   }
 }
 
-.popup__actionEdit{
+.actionEdit{
   background-color: #00a4a7;
 }
 
-.popup__actionDelete{
+.actionDelete{
   background-color: #fe206b;
 }
 
-.popup__buttonSpan{
+.actionSpan{
   font-size: 16px;
   color: #ffffff;
   vertical-align: middle;
 }
 
-.popup__actionsPic{
+.actionPic{
   width: 20px;
   vertical-align: middle;
   height: 20px;
@@ -87,12 +86,11 @@
 }
 
 
-// sous-block form
+// form
 .editForm{
   display: inline-block;
   vertical-align: top;
   width: 50%;
-  //height: 100%;
   padding-left: 15px;
 
   @media screen and (max-width: 800px ){
@@ -119,7 +117,6 @@
   font-size: 24px;
   color: #8094a1;
   margin: 25px 0 25px 0;
-//  padding: 5px 0 5px 0;
   width: 320px;
 
   @media screen and (max-width: 800px ){
@@ -140,25 +137,4 @@
   margin: 10px 5px 10px 5px;
   font-size: 22px;
   color: #8094a1;
-}
-
-// upload popup
-.uploadPopup{
-  position: absolute;
-  top: 25%;
-  left: 0;
-  right: 0;
-  z-index: 200;
-  margin: auto;
-  width: fit-content;
-  //height: fit-content;
-  display: none;
-}
-
-.deleteForm{
-  display: inline-block;
-}
-
-.uploadForm{
-  visibility: hidden;
 }
