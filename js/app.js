@@ -14,4 +14,18 @@ $(document).ready(function() {
         $(".uploadPopup").show();
         $('.overlay').show();
     });
+
+    $(".container").hover(function () {
+        $(this).css('background-image', 'linear-gradient(to bottom, rgba(0,0,0,0), rgba(0,0,0,1)), url("assets/uploads/<?php echo($imagesStock[$i]["image_name"])?>"');
+       console.log('hover');
+    });
+
+    $(".editForm__inputTitle").click(function () {
+        $(this).val("");
+    });
+/*
+    $(".editForm__labelTitle").click(function () {
+        $(this).css('visibility', 'hidden');
+
+    })*/
 });

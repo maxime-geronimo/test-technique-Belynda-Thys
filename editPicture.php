@@ -8,4 +8,13 @@
         $('.overlay').show();
     </script>
     <?php
+
+    if (!empty($_FILES['image'])){
+        ?>
+        <script>
+            $(".upload form").submit();
+        </script>
+        <?php
+    }
+
 }

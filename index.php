@@ -43,7 +43,7 @@ $imageToSet = $reqDefault->fetch();
 
 <section class="header">
     <h1 class="header__title">Profile Pic Manager</h1>
-    <img class="header__profilePicture" src="assets/uploads/<?php if (!empty($imageToSet['image_name'])) {echo($imageToSet['image_name']);} else { echo ($imagesStock[0]['image_name']);}?>">
+    <img class="header__profilePicture" src="assets/uploads/<?php if (!empty($imageToSet['image_name'])) {echo($imageToSet['image_name']);} elseif (!empty($imagesStock[0]['image_name'])) { echo ($imagesStock[0]['image_name']);} else { echo ('placeholder.png');}?>">
 </section>
 
 <section class="manage">
@@ -54,25 +54,28 @@ $imageToSet = $reqDefault->fetch();
         $nb = $nb_images - 1;
         for ($i = 0; $i <= $nb;) {
             ?>
-            <div class="container">
-                <a href="index.php?id=<?php echo($imagesStock[$i]['image_id'])?>">
-                    <img class="manage__editPicture" src="assets/uploads/<?php echo($imagesStock[$i]['image_name'])?>">
-                </a>
-                <form class="defaultForm" method="POST" action="default.php">
-                    <input type="hidden" name="image_id" value="<?php echo($imagesStock[$i]['image_id']);?>">
-                    <input type="hidden" name="image_id_to_remove" value="<?php echo($imageToSet['image_id']);?>">
-                    <button class="manage__editLink" type="submit">
-                        Set as defaut
-                    </button>
-                </form>
-            </div>
+            <a class="manage__editLink" href="index.php?id=<?php echo($imagesStock[$i]['image_id'])?>">
+                <div class="container" style="background-image: url('assets/uploads/<?php echo($imagesStock[$i]['image_name'])?>');">
+                    <!--<img class="manage__editPicture" src="assets/uploads/<?php echo($imagesStock[$i]['image_name'])?>">-->
+                    <div class="container-hover"></div>
+                    <form class="defaultForm" method="POST" action="default.php">
+                        <input type="hidden" name="image_id" value="<?php echo($imagesStock[$i]['image_id']);?>">
+                        <input type="hidden" name="image_id_to_remove" value="<?php echo($imageToSet['image_id']);?>">
+                        <button class="manage__editDefault" type="submit">
+                            set as defaut
+                        </button>
+                    </form>
+                </div>
+            </a>
+
             <?php
             $i=$i+1;
         }
         ?>
 
-        <div class="container">
-            <img class="manage__editPicture" src="assets/img/placeholder.png">
+        <div class="container-placeholder">
+            <!--<img class="manage__editPicture" src="assets/img/placeholder.png">-->
+            <img class="manage__editPic" src="assets/img/placeholder-picture.png">
         </div>
     </div>
     <img class="manage__add" src="assets/img/add.png" srcset="assets/img/add@2x.png, assets/img/add@3x.png">
@@ -103,16 +106,24 @@ $imageToEdit = $reqEdit->fetch();
         <img class="popup__rectanglePicture" src="assets/uploads/<?php echo($imageToEdit['image_name'])?>">
         <form class="editForm" method="POST" action="update.php">
             <input type="hidden" name="image_id" value="<?php echo($id);?>">
-            <!--<label class="editForm__labelTitle">Titre</label><br>-->
-            <input class="editForm__inputTitle" type="text" name="image_title" value="<?php if(!empty($imageToEdit['image_title'])) {echo($imageToEdit['image_title']);} else { echo('Titre');}?>"><br>
+            <?php if(empty($imageToEdit['image_title'])) {?>
+                <!--<label class="editForm__labelTitle">Titre</label><br>-->
+                <input class="editForm__inputTitle" type="text" name="image_title" value="Titre"><br>
+            <?php
+            } else {
+                ?>
+                <input class="editForm__inputTitle" type="text" name="image_title" value="<?php echo($imageToEdit['image_title']);?>"><br>
+            <?php
+            }?>
+
             <label class="editForm__labelDescribe">Description</label><br>
-            <input class="editForm__inputDescribe" type="text" name="image_describe" value="<?php echo($imageToEdit['image_describe'])?>">
+            <input class="editForm__inputDescribe" type="text" size="35" name="image_describe" value="<?php echo($imageToEdit['image_describe'])?>">
     </div>
     <div class="popup__actions">
-            <button class="popup__actionEdit">
-                <img src="">
-                <span class="popup__buttonSpan">Éditer</span>
-            </button>
+        <button class="popup__actionEdit">
+            <img src="">
+            <span class="popup__buttonSpan">Éditer</span>
+        </button>
         </form>
 
         <form class="deleteForm" method="POST" action="delete.php">

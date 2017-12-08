@@ -12,8 +12,8 @@
   margin: 5% auto; }
 
 .manage__editPicture {
-  width: 150px;
-  height: 150px;
+  width: 125px;
+  height: 125px;
   opacity: 1;
   display: block;
   transition: .5s ease;
@@ -23,25 +23,79 @@
   box-shadow: 0 0 5px 0 rgba(127, 143, 164, 0.6);
   border: solid 3px #ffffff; }
 
+.manage__editPic {
+  position: absolute;
+  top: 40%;
+  left: 33%; }
+
+.upload input[type='file'] {
+  position: absolute;
+  margin-top: 3px;
+  margin-left: 3px;
+  height: 1px;
+  width: 1px;
+  z-index: -5; }
+
 .container {
   display: inline-block;
-  position: relative; }
+  position: relative;
+  margin: 10px;
+  width: 125px;
+  height: 125px;
+  opacity: 1;
+  transition: .5s ease;
+  backface-visibility: hidden;
+  object-fit: cover;
+  border-radius: 20px;
+  box-shadow: 0 0 5px 0 rgba(127, 143, 164, 0.6);
+  border: solid 3px #ffffff;
+  background-repeat: no-repeat;
+  background-size: cover; }
 
-.container:hover .manage__editPicture {
-  opacity: 0.3; }
+.container-hover {
+  transition: .5s ease;
+  width: 100%;
+  height: 100%;
+  border-radius: 20px;
+  opacity: 0;
+  background-image: linear-gradient(to bottom, transparent, black); }
+
+.container-placeholder {
+  display: inline-block;
+  position: relative;
+  margin: 10px;
+  border-radius: 20px;
+  background-color: #D8D8D8;
+  width: 125px;
+  height: 125px;
+  opacity: 1;
+  transition: .5s ease;
+  backface-visibility: hidden;
+  object-fit: cover;
+  box-shadow: 0 0 5px 0 rgba(127, 143, 164, 0.6);
+  border: solid 3px #ffffff; }
 
 .manage__editLink {
+  text-decoration: none; }
+
+.manage__editDefault {
   transition: .5s ease;
   opacity: 0;
   position: absolute;
   top: 90%;
-  left: 20%;
+  left: 15%;
   transform: translate(0%, -80%);
   -ms-transform: translate(0%, -80%);
   text-decoration: underline;
-  cursor: pointer; }
+  cursor: pointer;
+  background: none;
+  border: none;
+  color: white; }
 
-.container:hover .manage__editLink {
+.container:hover .manage__editDefault {
+  opacity: 1; }
+
+.container:hover .container-hover {
   opacity: 1; }
 
 /*# sourceMappingURL=manage.css.map */
