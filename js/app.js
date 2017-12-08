@@ -3,6 +3,9 @@ $(document).ready(function() {
         $(".popup").hide();
         $('.overlay').fadeOut(400);
         $(".uploadPopup").hide();
+        setTimeout(function(){
+            window.history.back();
+        }, 0);
     });
 
     /*$(".manage__editPicture").click(function () {
@@ -11,8 +14,9 @@ $(document).ready(function() {
     });*/
 
     $(".manage__add").click(function () {
-        $(".uploadPopup").show();
-        $('.overlay').show();
+        //$(".uploadPopup").show();
+        //$('.overlay').show();
+        $('#inputFile').click();
     });
 
     $(".container").hover(function () {
@@ -22,6 +26,10 @@ $(document).ready(function() {
 
     $(".editForm__inputTitle").click(function () {
         $(this).val("");
+    });
+
+    $('#inputFile').change(function () {
+        $('.uploadForm').submit();
     });
 /*
     $(".editForm__labelTitle").click(function () {

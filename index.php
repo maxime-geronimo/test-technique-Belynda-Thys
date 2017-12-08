@@ -104,7 +104,7 @@ $imageToEdit = $reqEdit->fetch();
     <img class="popup__closeButton" src="assets/img/close.png" srcset="assets/img/close@2x.png, assets/img/close@3x.png">
     <div class="popup__rectangle">
         <img class="popup__rectanglePicture" src="assets/uploads/<?php echo($imageToEdit['image_name'])?>">
-        <form class="editForm" method="POST" action="update.php">
+        <form id="editForm" class="editForm" method="POST" action="update.php">
             <input type="hidden" name="image_id" value="<?php echo($id);?>">
             <?php if(empty($imageToEdit['image_title'])) {?>
                 <!--<label class="editForm__labelTitle">Titre</label><br>-->
@@ -117,11 +117,11 @@ $imageToEdit = $reqEdit->fetch();
             }?>
 
             <label class="editForm__labelDescribe">Description</label><br>
-            <input class="editForm__inputDescribe" type="text" size="35" name="image_describe" value="<?php echo($imageToEdit['image_describe'])?>">
+            <textarea class="editForm__inputDescribe" name="image_describe" form="editForm"><?php if(!empty($imageToEdit)){echo($imageToEdit['image_describe']);}?></textarea>
     </div>
     <div class="popup__actions">
         <button class="popup__actionEdit">
-            <img src="">
+            <img class="popup__actionsPic" src="assets/img/edit-1482.png" srcset="assets/img/edit-1482@2x.png, assets/img/edit-1482@3x.png">
             <span class="popup__buttonSpan">Éditer</span>
         </button>
         </form>
@@ -129,23 +129,23 @@ $imageToEdit = $reqEdit->fetch();
         <form class="deleteForm" method="POST" action="delete.php">
             <input type="hidden" name="image_id" value="<?php echo($id);?>">
             <button class="popup__actionDelete" type="submit">
-                <img src="">
+                <img class="popup__actionsPic" src="assets/img/delete-1487.png" srcset="assets/img/delete-1487@2x.png, assets/img/delete-1487@3x.png">
                 <span class="popup__buttonSpan">Supprimer</span>
             </button>
         </form>
     </div>
 </div>
 
-<div class="uploadPopup">
+<!--<div class="uploadPopup">
     <img class="popup__closeButton" src="assets/img/close.png" srcset="assets/img/close@2x.png, assets/img/close@3x.png">
-    <div class="popup__rectangle">
+    <div class="popup__rectangle">-->
         <form class="uploadForm" method="POST" action="upload.php" enctype="multipart/form-data">
             <input type="hidden" name="MAX_FILE_SIZE" value="100000">
-            <input type="file" name="image">
+            <input id="inputFile" type="file" name="image">
             <input type="submit" name="envoyer" value="Envoyer l'image">
         </form>
-    </div>
-</div>
+    <!--</div>
+</div>-->
 
 <script src="http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
 <script src="js/app.js"></script>

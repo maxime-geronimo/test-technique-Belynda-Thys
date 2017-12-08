@@ -61,7 +61,7 @@ body {
 * {
   box-sizing: border-box; }
 
-button, input {
+button, input, textarea {
   outline: none; }
 
 @font-face {
@@ -80,7 +80,6 @@ button, input {
   position: relative;
   top: 35%;
   margin: auto auto;
-  width: 247px;
   max-width: 95%;
   font-size: 22px;
   font-weight: bold;
@@ -219,16 +218,30 @@ button, input {
   margin: auto;
   width: fit-content;
   display: none; }
+  @media screen and (max-width: 800px) {
+    .popup {
+      top: 5%; } }
 
 .popup__rectangle {
   width: 700px;
   height: 300px;
   border-radius: 8px;
   background-color: #f4f7fa; }
+  @media screen and (max-width: 800px) {
+    .popup__rectangle {
+      width: 400px;
+      height: 550px; } }
 
 .popup__rectanglePicture {
-  height: 100%;
-  padding: 30px; }
+  height: 230px;
+  margin: 30px;
+  object-fit: contain;
+  border-radius: 20px;
+  box-shadow: 0 0 5px 0 rgba(127, 143, 164, 0.6);
+  border: solid 3px #ffffff; }
+  @media screen and (max-width: 800px) {
+    .popup__rectanglePicture {
+      margin: 30px 80px 30px 80px; } }
 
 .popup__closeButton {
   position: absolute;
@@ -247,6 +260,9 @@ button, input {
   border-radius: 4px;
   border: none;
   margin: 10px 0 0 10px; }
+  .popup__actionEdit:hover, .popup__actionDelete:hover {
+    transition: .2s ease;
+    box-shadow: 0px 2px 3px grey; }
 
 .popup__actionEdit {
   background-color: #00a4a7; }
@@ -256,14 +272,24 @@ button, input {
 
 .popup__buttonSpan {
   font-size: 16px;
-  color: #ffffff; }
+  color: #ffffff;
+  vertical-align: middle; }
+
+.popup__actionsPic {
+  width: 20px;
+  vertical-align: middle;
+  height: 20px;
+  margin: 5px; }
 
 .editForm {
   display: inline-block;
   vertical-align: top;
   width: 50%;
-  height: 100%;
   padding-left: 15px; }
+  @media screen and (max-width: 800px) {
+    .editForm {
+      width: 100%;
+      padding-left: 30px; } }
 
 .editForm__labelTitle {
   font-size: 24px;
@@ -282,6 +308,9 @@ button, input {
   color: #8094a1;
   margin: 25px 0 25px 0;
   width: 320px; }
+  @media screen and (max-width: 800px) {
+    .editForm__inputTitle {
+      margin: 0 0 25px 0; } }
 
 .editForm__labelDescribe {
   color: #8094a1; }
@@ -292,7 +321,9 @@ button, input {
   border-radius: 8px;
   background-color: #ffffff;
   border: solid 1px #ccd2db;
-  margin: 10px 5px 10px 5px; }
+  margin: 10px 5px 10px 5px;
+  font-size: 22px;
+  color: #8094a1; }
 
 .uploadPopup {
   position: absolute;
@@ -306,5 +337,8 @@ button, input {
 
 .deleteForm {
   display: inline-block; }
+
+.uploadForm {
+  visibility: hidden; }
 
 /*# sourceMappingURL=style.css.map */

@@ -4,8 +4,8 @@
 
     ?>
     <script>
-        $(".popup").show();
-        $('.overlay').show();
+        $(".popup").fadeIn(200);
+        $('.overlay').fadeIn(200);
     </script>
     <?php
 
