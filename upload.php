@@ -1,6 +1,7 @@
 <?php
 include ('config/config.php');
 
+
 $imageToUpload = $_FILES['image'];
 
 if(isset($imageToUpload) && (!empty($imageToUpload))) {
@@ -11,9 +12,8 @@ if(isset($imageToUpload) && (!empty($imageToUpload))) {
     $taille_maxi = 100000;
     $taille = filesize($imageToUpload['tmp_name']);
 
-    $extensions = array('.png', '.jpg', '.jpeg');
+    $extensions = array('.png', '.jpg', '.jpeg', '.JPG');
     $extension = strrchr($imageToUpload['name'], '.');
-
 
     if(!in_array($extension, $extensions)) //Si l'extension n'est pas dans le tableau
     {
@@ -22,13 +22,13 @@ if(isset($imageToUpload) && (!empty($imageToUpload))) {
 
     if($taille>$taille_maxi)
     {
-        $erreur = 'Le fichier est trop gros...';
+        $erreur = 'Le fichier est trop gros... choisissez un fichier inférieur à 100ko';
     }
 
     if(!isset($erreur)) //S'il n'y a pas d'erreur, on upload
     {
         $image_name = strtr($image_name,
-            'ÀÁÂÃÄÅÇÈÉÊËÌÍÎÏÒÓÔÕÖÙÚÛÜÝàáâãäåçèéêëìíîïðòóôõöùúûüýÿ',
+           'ÀÁÂÃÄÅÇÈÉÊËÌÍÎÏÒÓÔÕÖÙÚÛÜÝàáâãäåçèéêëìíîïðòóôõöùúûüýÿ',
             'AAAAAACEEEEIIIIOOOOOUUUUYaaaaaaceeeeiiiioooooouuuuyy');
         $image_name = preg_replace('/([^.a-z0-9]+)/i', '-', $image_name);
 
@@ -47,15 +47,12 @@ if(isset($imageToUpload) && (!empty($imageToUpload))) {
 
             if ($req){
 
-                //echo ($image_name);
-
                 $sqlCreate = "SELECT image_id FROM images WHERE image_name = '". $image_name. "' ORDER BY image_id DESC LIMIT 1";
 
                 $reqCreate = $bdd->prepare($sqlCreate);
                 $reqCreate->execute();
 
                 $imageCreated = $reqCreate->fetch();
-                //var_dump($imageCreated);
 
                 header("Location: index.php?id=" . $imageCreated['image_id']);
 

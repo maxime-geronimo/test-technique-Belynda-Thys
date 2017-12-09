@@ -23,8 +23,9 @@
 
 .rectanglePicture {
   height: 230px;
+  width: 230px;
   margin: 30px;
-  object-fit: contain;
+  object-fit: cover;
   border-radius: 20px;
   box-shadow: 0 0 5px 0 rgba(127, 143, 164, 0.6);
   border: solid 3px #ffffff; }
