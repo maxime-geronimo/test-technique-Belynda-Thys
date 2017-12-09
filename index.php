@@ -100,7 +100,6 @@ include ('requests.php');
     <input type="submit" name="envoyer" value="Envoyer l'image">
 </form>
 
-
 <script src="http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
 <script src="js/app.js"></script>
 <?php include('editPicture.php'); ?>

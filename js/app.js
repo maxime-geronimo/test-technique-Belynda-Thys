@@ -12,8 +12,6 @@ $(document).ready(function() {
 
     //upload file
     $(".manage__add").click(function () {
-        //$(".uploadPopup").show();
-        //$('.overlay').show();
         $('#inputFile').click();
     });
 
@@ -24,12 +22,31 @@ $(document).ready(function() {
     //pictures hover
     $(".container").hover(function () {
         $(this).css('background-image', 'linear-gradient(to bottom, rgba(0,0,0,0), rgba(0,0,0,1)), url("assets/uploads/<?php echo($imagesStock[$i]["image_name"])?>"');
-       console.log('hover');
     });
 
     //form
-    $(".editForm__inputTitle").click(function () {
-        $(this).val("");
-    });
+    var input = $(".editForm__inputTitle");
+    var inputVal = input.val();
 
+    function getInputVal() {
+        input.keyup(function () {
+
+            var newVal = input.val();
+
+            inputVal = newVal;
+
+        });
+
+        return inputVal;
+    }
+
+    input.click(function () {
+        getInputVal();
+
+        var titre = "Titre";
+
+        if(inputVal == titre){
+            input.val("");
+        }
+    });
 });
